@@ -24,7 +24,7 @@
                 </a>
                 <div class="collapse" id="collapseWebinar" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="app_admin.php?page=user_table">Add Webinar</a>
+                        <a class="nav-link" href="app_admin.php?page=page_add_webinar">Add Webinar</a>
                         <a class="nav-link" href="app_admin.php?page=webinar_table">Table Webinar</a>
                     </nav>
                 </div>

@@ -13,6 +13,9 @@ switch ($page) {
     case 'konseling_table':
         include('konseling_table.php');
         break;
+    case 'page_add_webinar':
+        include('page_add_webinar.php');
+        break;
 
     default:
         # code...

@@ -18,11 +18,3 @@ if (mysqli_num_rows($res) > 0) {
     $_SESSION["message"] = "Akun berhasil dibuat";
     header("Location: page_login.php");
 }
-
-// $sql = "INSERT INTO user VALUES(null, '$name', '$email', '$password')";
-// $hasil = mysqli_query($conn, $sql);
-// if ($hasil) {
-//     $_SESSION["success"] = true;
-//     $_SESSION["message"] = "Akun berhasil dibuat";
-//     header("Location: page_login.php");
-// }
