@@ -25,6 +25,9 @@ switch ($page) {
     case 'page_edit_konseling':
         include('page_edit_konseling.php');
         break;
+    case 'page_edit_user':
+        include('page_edit_user.php');
+        break;
 
     default:
         # code...

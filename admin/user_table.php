@@ -61,8 +61,8 @@
                                 <td><?= $row['email'] ?></td>
                                 <td><?= $row['password'] ?></td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-primary bi bi-pencil"></a>
-                                    <a href="" class="btn btn-danger bi bi-trash"></a>
+                                    <a href="app_admin.php?page=page_edit_user&id=<?= $row['id'] ?>" class="btn btn-primary bi bi-pencil"></a>
+                                    <a href="delete_user.php?id=<?= $row['id'] ?>" class="btn btn-danger bi bi-trash"></a>
                                 </td>
                             </tr>
                         <?php } ?>
