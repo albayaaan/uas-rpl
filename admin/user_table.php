@@ -1,7 +1,28 @@
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">User</h1>
-        <div class="card mt-4">
+        <h1 class="mt-4 mb-4">User</h1>
+        <!-- alert -->
+        <?php
+        if (isset($_SESSION["message"])) {
+            if (isset($_SESSION["success"])) {
+        ?>
+                <div class="container-fluid alert alert-primary mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+            <?php
+                unset($_SESSION["success"]);
+            } else {
+            ?>
+                <div class="container-fluid alert alert-danger mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+        <?php
+            }
+        }
+        unset($_SESSION["message"]);
+        ?>
+        <!-- end alert -->
+        <div class="card mt-2">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Table User

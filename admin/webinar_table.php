@@ -1,7 +1,28 @@
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Webinar</h1>
-        <div class="card mt-4">
+        <h1 class="mt-4 mb-4">Webinar</h1>
+        <!-- alert -->
+        <?php
+        if (isset($_SESSION["message"])) {
+            if (isset($_SESSION["success"])) {
+        ?>
+                <div class="container-fluid alert alert-primary mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+            <?php
+                unset($_SESSION["success"]);
+            } else {
+            ?>
+                <div class="container-fluid alert alert-danger mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+        <?php
+            }
+        }
+        unset($_SESSION["message"]);
+        ?>
+        <!-- end alert -->
+        <div class="card mt-2">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Table Webinar
@@ -43,8 +64,8 @@
                                 <td><?= $row['tanggal'] ?></td>
                                 <td><?= $row['harga'] ?></td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-primary bi bi-pencil"></a>
-                                    <a href="" class="btn btn-danger bi bi-trash"></a>
+                                    <a href="app_admin.php?page=page_edit_webinar&id=<?= $row['id'] ?>" class="btn btn-primary bi bi-pencil"></a>
+                                    <a href="delete_webinar.php?id=<?= $row['id'] ?>" class="btn btn-danger bi bi-trash"></a>
                                 </td>
                             </tr>
                         <?php } ?>

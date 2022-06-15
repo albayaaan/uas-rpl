@@ -1,7 +1,28 @@
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Konseling</h1>
-        <div class="card mt-4">
+        <h1 class="mt-4 mb-4">Konseling</h1>
+        <!-- alert -->
+        <?php
+        if (isset($_SESSION["message"])) {
+            if (isset($_SESSION["success"])) {
+        ?>
+                <div class="container-fluid alert alert-primary mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+            <?php
+                unset($_SESSION["success"]);
+            } else {
+            ?>
+                <div class="container-fluid alert alert-danger mt-2" role="alert">
+                    <?= $_SESSION["message"]; ?>
+                </div>
+        <?php
+            }
+        }
+        unset($_SESSION["message"]);
+        ?>
+        <!-- end alert -->
+        <div class="card mt-2">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 Table Konseling
@@ -10,73 +31,38 @@
                 <table id="datatablesSimple" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>Paket</th>
+                            <th>Harga</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>Paket</th>
+                            <th>Harga</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                        </tr>
-                        <tr>
-                            <td>Shad Decker</td>
-                            <td>Regional Director</td>
-                            <td>Edinburgh</td>
-                            <td>51</td>
-                            <td>2008/11/13</td>
-                            <td>$183,000</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Bruce</td>
-                            <td>Javascript Developer</td>
-                            <td>Singapore</td>
-                            <td>29</td>
-                            <td>2011/06/27</td>
-                            <td>$183,000</td>
-                        </tr>
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td>$112,000</td>
-                        </tr>
+                        <?php
+                        include "connect.php";
+                        $i = 1;
+                        $sql = "SELECT * FROM konseling";
+                        $hasil = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_array($hasil)) {
+                        ?>
+                            <tr>
+                                <td><?= $i++ ?></td>
+                                <td><?= $row['paket'] ?></td>
+                                <td><?= $row['harga'] ?></td>
+                                <td class="text-center">
+                                    <a href="app_admin.php?page=page_edit_konseling&id=<?= $row['id'] ?>" class="btn btn-primary bi bi-pencil"></a>
+                                    <a href="delete_konseling.php?id=<?= $row['id'] ?>" class="btn btn-danger bi bi-trash"></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

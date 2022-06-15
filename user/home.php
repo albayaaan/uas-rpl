@@ -98,7 +98,7 @@ include('hero.php');
                 <div class="col-lg-4 col-md-6">
                     <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
                         <h3>Silver</h3>
-                        <h4><sup>Rp</sup>000k<span> / month</span></h4>
+                        <h4><sup>Rp</sup>000k</h4>
                         <ul>
                             <li>Lorem ipsum dolor sit amet.</li>
                             <li>Lorem ipsum dolor sit amet.</li>

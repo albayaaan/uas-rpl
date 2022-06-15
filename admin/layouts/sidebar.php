@@ -35,7 +35,7 @@
                 </a>
                 <div class="collapse" id="collapseKonseling" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="app_admin.php?page=user_table">Add Konseling</a>
+                        <a class="nav-link" href="app_admin.php?page=page_add_konseling">Add Konseling</a>
                         <a class="nav-link" href="app_admin.php?page=konseling_table">Table Konseling</a>
                     </nav>
                 </div>
