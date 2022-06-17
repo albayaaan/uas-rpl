@@ -34,6 +34,7 @@
                             <th>No</th>
                             <th>Paket</th>
                             <th>Harga</th>
+                            <th>Poster</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@
                             <th>No</th>
                             <th>Paket</th>
                             <th>Harga</th>
+                            <th>Poster</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </tfoot>
@@ -49,7 +51,7 @@
                         <?php
                         include "connect.php";
                         $i = 1;
-                        $sql = "SELECT * FROM konseling";
+                        $sql = "SELECT * FROM konseling ORDER BY id DESC";
                         $hasil = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_array($hasil)) {
                         ?>
@@ -57,6 +59,7 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $row['paket'] ?></td>
                                 <td><?= $row['harga'] ?></td>
+                                <td><?= $row['poster'] ?></td>
                                 <td class="text-center">
                                     <a href="app_admin.php?page=page_edit_konseling&id=<?= $row['id'] ?>" class="btn btn-primary bi bi-pencil"></a>
                                     <a href="delete_konseling.php?id=<?= $row['id'] ?>" class="btn btn-danger bi bi-trash"></a>

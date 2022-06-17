@@ -36,6 +36,7 @@
                             <th>Jam</th>
                             <th>Tanggal</th>
                             <th>Harga</th>
+                            <th>Poster</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -46,6 +47,7 @@
                             <th>Jam</th>
                             <th>Tanggal</th>
                             <th>Harga</th>
+                            <th>Poster</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </tfoot>
@@ -53,7 +55,7 @@
                         <?php
                         include "connect.php";
                         $i = 1;
-                        $sql = "SELECT * FROM webinar";
+                        $sql = "SELECT * FROM webinar ORDER BY id DESC";
                         $hasil = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_array($hasil)) {
                         ?>
@@ -63,6 +65,7 @@
                                 <td><?= $row['jam'] ?></td>
                                 <td><?= $row['tanggal'] ?></td>
                                 <td><?= $row['harga'] ?></td>
+                                <td><?= $row['poster'] ?></td>
                                 <td class="text-center">
                                     <a href="app_admin.php?page=page_edit_webinar&id=<?= $row['id'] ?>" class="btn btn-primary bi bi-pencil"></a>
                                     <a href="delete_webinar.php?id=<?= $row['id'] ?>" class="btn btn-danger bi bi-trash"></a>

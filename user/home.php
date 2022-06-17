@@ -2,9 +2,8 @@
 include('hero.php');
 ?>
 <main id="main">
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about section-bg">
+    <!-- ======= About Webinar Section ======= -->
+    <section id="webinar" class="about section-bg">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -27,47 +26,39 @@ include('hero.php');
         </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <div class="portfolio-container"></div>
+
+    <!-- ======= Webinar Section ======= -->
+    <section class="pricing">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
                 <h2>Pilihan Webinar</h2>
                 <p>Berinteraksi dan berdiskusi dengan pembicara ahli di bidangnya</p>
+                <i style="color: #3498db;">klik gambar untuk mendaftar</i>
             </div>
 
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="zoom">
-                        <a href="app.php?page=detail">
-                            <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
-                        </a>
+            <div class="row portfolio-container justify-content-center" data-aos="fade-up" data-aos-delay="400">
+                <?php
+                $sql = "SELECT * FROM webinar";
+                $hasil = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_array($hasil)) {
+                ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app mb-4">
+                        <div class="zoom">
+                            <a href="app.php?page=form_webinar&id=<?= $row["id"] ?>">
+                                <img src="../uploads/webinar/<?= $row["poster"] ?>" class="img-fluid" alt="">
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="zoom">
-                        <a href="app.php?page=detail">
-                            <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="zoom">
-                        <a href="app.php?page=detail">
-                            <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
 
         </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Pricing Section -->
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about section-bg">
+    <!-- ======= About Konseling Section ======= -->
+    <section id="konseling" class="about section-bg">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -84,8 +75,8 @@ include('hero.php');
         </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- ======= Konseling Section ======= -->
+    <section class="pricing">
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
@@ -93,59 +84,20 @@ include('hero.php');
                 <p>Ceritakan dan cari tahu solusi masalahmu bersama Mentor</p>
             </div>
 
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-                        <h3>Silver</h3>
-                        <h4><sup>Rp</sup>000k</h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li class="na">Lorem ipsum dolor sit amet.</li>
-                            <li class="na">Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="app.php?page=form_konseling" class="btn-buy">Daftar Konseling</a>
+            <div class="row portfolio-container justify-content-center" data-aos="fade-up" data-aos-delay="400">
+                <?php
+                $sql = "SELECT * FROM konseling";
+                $hasil = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_array($hasil)) {
+                ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app mb-4">
+                        <div class="zoom">
+                            <a href="app.php?page=form_konseling&id=<?= $row["id"] ?>">
+                                <img src="../uploads/konseling/<?= $row["poster"] ?>" class="img-fluid" alt="">
+                            </a>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-                    <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
-                        <h3>Gold</h3>
-                        <h4><sup>Rp</sup>000k<span> / month</span></h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li class="na">Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="app.php?page=form_konseling" class="btn-buy">Daftar Konseling</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                    <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
-                        <h3>Platinum</h3>
-                        <h4><sup>Rp</sup>000k<span> / month</span></h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet..</i>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="app.php?page=form_konseling" class="btn-buy">Daftar Konseling</a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php } ?>
             </div>
 
         </div>
@@ -163,10 +115,8 @@ include('hero.php');
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact-about">
-                        <h3>Manusia Pintar</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sed debitis eligendi,
-                            perferendis iusto consequatur quos fuga tempore! Doloribus itaque iure molestias officia
-                            consectetur ipsam.</p>
+                        <h3>Manusia Sehat</h3>
+                        <p>Merupakan sebuah startup yang menjembatani antara orang yang memerlukan konseling dengan mentor terbaik.</p>
                         <div class="social-links">
                             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -180,12 +130,12 @@ include('hero.php');
                     <div class="info">
                         <div>
                             <i class="ri-map-pin-line"></i>
-                            <p>Jl. pangeran jayakarta ,budirahayu 1 No.3<br>Jakarta Pusat 10730</p>
+                            <p>Jl. Pangeran Jayakarta, Budirahayu 1 No.3<br>Jakarta Pusat 10730</p>
                         </div>
 
                         <div>
                             <i class="ri-mail-send-line"></i>
-                            <p>unknown@example.com</p>
+                            <p>humas@manusiasehat.com</p>
                         </div>
 
                         <div>

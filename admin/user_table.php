@@ -51,7 +51,7 @@
                         <?php
                         include "connect.php";
                         $i = 1;
-                        $sql = "SELECT * FROM user";
+                        $sql = "SELECT * FROM user ORDER BY id DESC";
                         $hasil = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_array($hasil)) {
                         ?>

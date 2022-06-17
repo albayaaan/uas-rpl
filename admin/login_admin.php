@@ -12,7 +12,8 @@ if (mysqli_num_rows($login) > 0) {
     $data = mysqli_fetch_array($login);
 
     $_SESSION["login"] = true;
-    $_SESSION["name"] = $data["name"];
+    $_SESSION["name_admin"] = $data["name"];
+    $_SESSION["admin"] = $data["id"];
 
     header("Location: app_admin.php?page=dashboard");
 } else {

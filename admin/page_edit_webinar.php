@@ -35,7 +35,7 @@
                 Edit Webinar
             </div>
             <div class="card-body">
-                <form action="edit_webinar.php" method="post">
+                <form action="edit_webinar.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <div class="row">
                         <div class="mb-3">
@@ -63,6 +63,12 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="row">
+                        <div class="col-auto">
+                            <label for="poster" class="form-label">Poster Webinar</label>
+                            <input type="file" class="form-control" id="poster" name="poster">
+                        </div>
+                    </div> -->
                     <div class="row justify-content-end">
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary">Simpan</button>

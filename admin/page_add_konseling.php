@@ -28,19 +28,25 @@
                 Tambah Konseling
             </div>
             <div class="card-body">
-                <form action="add_konseling.php" method="post">
+                <form action="add_konseling.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="paket" class="form-label">Paket Konseling</label>
-                                <input type="text" class="form-control" id="paket" name="paket" required>
+                                <input type="text" class="form-control" id="paket" name="paket" value="<?= isset($_SESSION['post']) ? $_SESSION['post']['paket'] : "" ?>" required>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-4">
                                 <label for="harga" class="form-label">Harga Konseling</label>
-                                <input type="number" class="form-control" id="harga" name="harga" required>
+                                <input type="number" class="form-control" id="harga" name="harga" value="<?= isset($_SESSION['post']) ? $_SESSION['post']['harga'] : "" ?>" required>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            <label for="poster" class="form-label">Poster Konseling</label>
+                            <input type="file" class="form-control" id="poster" name="poster" required>
                         </div>
                     </div>
                     <div class="row justify-content-end">

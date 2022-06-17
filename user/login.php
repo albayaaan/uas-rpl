@@ -13,6 +13,7 @@ if (mysqli_num_rows($login) > 0) {
 
     $_SESSION["login"] = true;
     $_SESSION["name"] = $data["name"];
+    $_SESSION["user"] = $data["id"];
 
     header("Location: app.php?page=home");
 } else {
