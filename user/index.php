@@ -27,6 +27,10 @@
     <?php
     include "connect.php";
     session_start();
+
+    if (isset($_SESSION["user"])) {
+        header("Location: app.php?page=home");
+    }
     ?>
 
     <header id="header" class="fixed-top d-flex align-items-center position-sticky">
@@ -39,7 +43,7 @@
         </div>
     </header><!-- End Header -->
 
-    <div style="max-height: 73vh; min-height: 73vh">
+    <div style="max-height: 75vh; min-height: 75vh">
         <main id="main">
 
             <!-- ======= Counts Section ======= -->
@@ -48,11 +52,11 @@
                 <div class="container">
 
                     <div class="row">
-                        <div class="image col-lg-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
-                            <img src="assets/img/counts-img.png" alt="" class="img-fluid">
+                        <div class="image col-lg-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+                            <img src="assets/img/login.png" alt="" class="img-fluid">
                         </div>
 
-                        <div class="col-lg-6 col-md-12 align-self-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="offset-1 col-lg-6 col-md-12 align-self-center" data-aos="fade-up" data-aos-delay="300">
                             <!-- alert -->
                             <?php
                             if (isset($_SESSION["message"])) {

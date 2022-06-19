@@ -93,7 +93,7 @@ include('hero.php');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app mb-4">
                         <div class="zoom">
                             <a href="app.php?page=form_konseling&id=<?= $row["id"] ?>">
-                                <img src="../uploads/konseling/<?= $row["poster"] ?>" class="img-fluid" alt="">
+                                <img src="../uploads/konseling/<?= $row["poster"] ?>" class="img-fluid" alt="" style="width: 100%;">
                             </a>
                         </div>
                     </div>

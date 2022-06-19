@@ -27,6 +27,10 @@
     <?php
     include "connect.php";
     session_start();
+
+    if (isset($_SESSION["user"])) {
+        header("Location: app.php?page=home");
+    }
     ?>
 
     <header id="header" class="fixed-top d-flex align-items-center position-sticky">

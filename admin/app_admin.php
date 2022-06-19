@@ -17,6 +17,10 @@
     <?php
     session_start();
     include('layouts/navbar.php');
+
+    if (empty($_SESSION["admin"])) {
+        header("Location: page_login_admin.php");
+    }
     ?>
     <div id="layoutSidenav">
         <?php

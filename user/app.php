@@ -29,6 +29,10 @@
     include('connect.php');
     include('header.php');
 
+    if (empty($_SESSION["user"])) {
+        header("Location: page_login.php");
+    }
+
     if (isset($_SESSION["message"])) {
         if (isset($_SESSION["success"])) {
     ?>

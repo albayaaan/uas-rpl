@@ -39,7 +39,7 @@
                         <div class="col-4">
                             <div class="form-floating">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="floatingInput" name="noWa" name="noWa" value="<?= isset($_SESSION['post']) ? $_SESSION['post']['noWa'] : "" ?>" required>
+                                    <input type="number" class="form-control" id="floatingInput" name="noWa" name="noWa" value="<?= isset($_SESSION['post']) ? $_SESSION['post']['noWa'] : "" ?>" required minlength="10" maxlength="13">
                                     <label for="floatingInput">Nomor WhatsApp</label>
                                 </div>
                             </div>

@@ -24,7 +24,7 @@ if ($uploadOk == 1) {
     $newfilename = round(microtime(true)) . '.' . end($temp);
     move_uploaded_file($_FILES["poster"]["tmp_name"], "../uploads/webinar/" . $newfilename);
 
-    $sql = "INSERT INTO webinar VALUES(null, '$admin', '$topik', '$jam', '$tanggal', '$harga', '$newfilename')";
+    $sql = "INSERT INTO webinar VALUES(null, '$admin', '1', '$topik', '$jam', '$tanggal', '$harga', '$newfilename')";
     $hasil = mysqli_query($conn, $sql);
     if (!$hasil) {
         $_SESSION["message"] = "Webinar gagal ditambahkan";

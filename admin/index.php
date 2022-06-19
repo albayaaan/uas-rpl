@@ -16,6 +16,9 @@
     <?php
     include "connect.php";
     session_start();
+    if (isset($_SESSION["admin"])) {
+        header("Location: app_admin.php?page=dashboard");
+    }
     ?>
 
     <div id="layoutAuthentication">
